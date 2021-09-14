@@ -38,7 +38,7 @@ Speakers:
 
 # Q&A
 
-Questions via sli.do (link in the chat)
+Questions via: <https://app.sli.do/event/hcmaidrc>
 
 We'll revisit questions after all of the talks.
 
