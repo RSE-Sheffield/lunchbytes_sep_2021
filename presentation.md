@@ -83,7 +83,7 @@ $ pip list -v
 ```
 ```bash
 ...
-numpy                             1.13.3              /usr/lib/python3/dist-packages
+numpy    1.13.3       /usr/lib/python3/dist-packages
 ...
 ```
 
