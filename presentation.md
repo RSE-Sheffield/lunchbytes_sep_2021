@@ -35,14 +35,71 @@ Questions via: <https://app.sli.do/event/hcmaidrc>
 We'll revisit questions after all of the talks.
 
 
-#  Background
-
-::: incremental
+<!-- ::: incremental
 * `python` is an extremely popular language in research
 * imports libraries, modules, packages for additional functionality
 * `pip` is a bundled program which installs packages
 * `python` normally looks for imports system-wide
-:::
+::: -->
+#
+```python
+import glob
+import numpy
+import matplotlib.pyplot
+
+filenames = sorted(glob.glob('inflammation*.csv'))
+filenames = filenames[0:3]
+for filename in filenames:
+    print(filename)
+
+    data = numpy.loadtxt(fname=filename, delimiter=',')
+
+    fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+
+    axes1 = fig.add_subplot(1, 3, 1)
+    axes2 = fig.add_subplot(1, 3, 2)
+    axes3 = fig.add_subplot(1, 3, 3)
+
+    axes1.set_ylabel('average')
+    axes1.plot(numpy.mean(data, axis=0))
+
+    axes2.set_ylabel('max')
+    axes2.plot(numpy.max(data, axis=0))
+
+    axes3.set_ylabel('min')
+    axes3.plot(numpy.min(data, axis=0))
+
+    fig.tight_layout()
+    matplotlib.pyplot.show()
+```
+
+# Where do packages go?
+```bash
+$ pip install numpy
+```
+
+```bash
+$ pip list -v
+```
+```bash
+...
+numpy                             1.13.3              /usr/lib/python3/dist-packages
+...
+```
+
+# Where does python look for packages?
+```python
+import sys
+for path in sys.path:
+    print(path)
+```
+```bash
+/usr/lib/python3.7
+/usr/lib/python3.7/lib-dynload
+/home/username/.local/lib/python3.7/site-packages
+/usr/local/lib/python3.7/dist-packages
+/usr/lib/python3/dist-packages
+```
 
 # What's the issue?
 ::: incremental

@@ -23,9 +23,8 @@ jobs:
           args: >-  # allows you to break string into multiple lines
             --self-contained   
             -t revealjs
-            -V theme=moon
+            -V theme=white
             -o docs/index.html
-            --metadata title="LunchBytes Sep 2021"
             presentation.md
 
       - name: Deploy 🚀
